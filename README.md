@@ -17,7 +17,7 @@ Input: num1 = "0", num2 = "0"
 Output: "0"
 
 
- [leetcode link]("https://leetcode.com/problems/add-strings/")
+ [leetcode link](https://leetcode.com/problems/add-strings/)
 
 
 ## Algorithm :
