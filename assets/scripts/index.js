@@ -33,10 +33,6 @@ console.log(sum.trim());
 
 
 
-
-
-
-
 //Solution 2:
 
 
