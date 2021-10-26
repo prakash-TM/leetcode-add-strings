@@ -15,18 +15,18 @@
 
 //Solution 1:
 
-var num1 = "456";
-var num2 = "77";
+// var num1 = "456";
+// var num2 = "77";
 
-const a = Number(num1); // or parseInt(num1)
-const b = Number(num2);
-let add = a + b;
-out = "0" + add;
-var sum = "";
-for (let i = 1; i < out.length; i++) {
-    sum += out[i] + "";
-}
-console.log(sum.trim());
+// const a = Number(num1); // or parseInt(num1)
+// const b = Number(num2);
+// let add = a + b;
+// out = "0" + add;
+// var sum = "";
+// for (let i = 1; i < out.length; i++) {
+//     sum += out[i] + "";
+// }
+// console.log(sum.trim());
 
 
 
@@ -36,125 +36,151 @@ console.log(sum.trim());
 //Solution 2:
 
 
-// var num1 = "11";
-// var num2 = "123";
-// Fstr = "";
+var num1 = "98";
+var num2 = "9";
+Fstr = "";
 
-// var a = [];
-// var carry = 0;
-// const Lnum1 = num1.length
-// const Lnum2 = num2.length
-
-// if (Lnum1 > Lnum2) {
-//     Flen = Lnum1 - Lnum2;
-
-//     for (j = 0; j < Flen; j++) {
-//         Fstr += "0"
-//     }
-//     Fstr += num2;
-
-//     for (let i = Lnum1 - 1; i >= 0; i--) {
-//         let x = parseInt(num1[i]);
-//         let y = parseInt(Fstr[i]);
-
-//         let sum = x + y + carry;
-//         if (i === 0) {
-//             if (sum > 10) {
-//                 a.push(sum - 10);
-//                 a.push(1);
+var a = [];
+var carry = 0;
+const Lnum1 = num1.length
+const Lnum2 = num2.length
 
 
-//             } else if (sum === 10) {
-//                 a.push(0)
-//                 a.push(1);
-//             } else {
-//                 a.push(sum);
-//             }
+if (Lnum1 > Lnum2) {
 
-//         } else {
+    Flen = Lnum1 - Lnum2;
 
-//             if (sum > 10) {
-//                 a.push(sum - 10);
-//                 carry = 1;
-//             } else if (sum === 10) {
-//                 a.push(0)
-//                 carry = 1;
-//             } else {
-//                 a.push(sum);
-//             }
-//         }
-//     }
-
-// } else if (Lnum1 === Lnum2) {
-
-//     for (let i = Lnum1 - 1; i >= 0; i--) {
-
-//         let x = parseInt(num1[i]);
-//         let y = parseInt(num2[i]);
-//         let sum = x + y + carry;
-
-//         if (i === 0) {
-//             if (sum > 10) {
-//                 a.push(sum - 10);
-//                 a.push(1);
+    for (j = 0; j < Flen; j++) {
+        Fstr += "0"
+    }
+    Fstr += num2;
 
 
-//             } else if (sum === 10) {
-//                 a.push(0)
-//                 a.push(1);
-//             } else {
-//                 a.push(sum);
-//             }
+    for (let i = Lnum1 - 1; i >= 0; i--) {
+        let x = parseInt(num1[i]);
+        let y = parseInt(Fstr[i]);
 
-//         } else {
+        let sum = x + y + carry;
+        if (i === 0) {
+            if (sum > 10) {
 
-//             if (sum > 10) {
-//                 a.push(sum - 10);
-//                 carry = 1;
+                a.push(sum - 10);
+                a.push(1);
+            } else if (sum === 10) {
 
-//             } else if (sum === 10) {
-//                 a.push(0)
-//                 carry = 1;
-//             } else {
-//                 a.push(sum);
-//             }
-//         }
-//     }
+                a.push(0);
+                a.push(1);
+            } else {
+                a.push(sum);
+                carry = 0;
+            }
 
-// } else {
-//     if (Lnum1 < Lnum2) {
+        } else {
 
-//         Flen = Lnum2 - Lnum1;
-//         for (j = 0; j < Flen; j++) {
-//             Fstr += "0"
-//         }
-//         Fstr += num1;
+            if (sum > 10) {
+                a.push(sum - 10);
+                carry = 1;
+            } else if (sum === 10) {
+                a.push(0)
+                carry = 1;
+            } else {
+                a.push(sum);
+                carry = 0;
+            }
+        }
+    }
+
+} else if (Lnum1 === Lnum2) {
+
+    for (let i = Lnum1 - 1; i >= 0; i--) {
+
+        let x = parseInt(num1[i]);
+        let y = parseInt(num2[i]);
+        let sum = x + y + carry;
+
+        if (i === 0) {
+            if (sum > 10) {
+                a.push(sum - 10);
+                a.push(1);
 
 
-//         for (let i = Lnum2 - 1; i >= 0; i--) {
-//             let x = parseInt(Fstr[i]);
-//             let y = parseInt(num2[i]);
+            } else if (sum === 10) {
+                a.push(0)
+                a.push(1);
+            } else {
+                a.push(sum);
+                carry = 0;
+            }
 
-//             let sum = x + y + carry;
+        } else {
 
-//             if (sum > 10) {
-//                 a.push(sum - 10);
-//                 carry = 1;
-//             } else if (sum === 10) {
-//                 a.push(0)
-//                 carry = 1;
-//             } else {
-//                 a.push(sum);
-//             }
-//         }
+            if (sum > 10) {
+                a.push(sum - 10);
+                carry = 1;
 
-//     }
-// }
+            } else if (sum === 10) {
+                a.push(0)
+                carry = 1;
+            } else {
+                a.push(sum);
+                carry = 0;
+            }
+        }
+    }
 
-// var resLen = a.length;
-// var res = "";
-// for (let i = resLen - 1; i >= 0; i--) {
-//     res += a[i] + "";
-// }
+} else {
+    if (Lnum1 < Lnum2) {
 
-// console.log(res.trim())
+        Flen = Lnum2 - Lnum1;
+        for (j = 0; j < Flen; j++) {
+            Fstr += "0"
+        }
+        Fstr += num1;
+
+
+        for (let i = Lnum2 - 1; i >= 0; i--) {
+            let x = parseInt(Fstr[i]);
+            let y = parseInt(num2[i]);
+
+            let sum = x + y + carry;
+
+            if (i === 0) {
+                if (sum > 10) {
+                    a.push(sum - 10);
+                    a.push(1);
+
+
+                } else if (sum === 10) {
+                    a.push(0)
+                    a.push(1);
+                } else {
+                    a.push(sum);
+                    carry = 0;
+                }
+
+            } else {
+
+                if (sum > 10) {
+                    a.push(sum - 10);
+                    carry = 1;
+
+                } else if (sum === 10) {
+                    a.push(0)
+                    carry = 1;
+                } else {
+                    a.push(sum);
+                    carry = 0;
+                }
+            }
+        }
+
+    }
+}
+
+var resLen = a.length;
+var res = "";
+for (let i = resLen - 1; i >= 0; i--) {
+    res += a[i] + "";
+}
+
+console.log(res.trim())
